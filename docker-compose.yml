@@ -1,0 +1,10 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:4.4.4
+    container_name: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data-4.4:/data/db
