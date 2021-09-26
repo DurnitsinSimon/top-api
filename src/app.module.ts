@@ -6,6 +6,9 @@ import {ProductModule} from './product/product.module';
 import {ReviewModule} from './review/review.module';
 import {ConfigModule, ConfigService} from '@nestjs/config';
 import {TypegooseModule} from 'nestjs-typegoose';
+import { FilesModule } from './files/files.module';
+import { SitemapModule } from './sitemap/sitemap.module';
+import { TelegramModule } from './telegram/telegram.module';
 
 @Module({
 	imports: [
@@ -18,7 +21,10 @@ import {TypegooseModule} from 'nestjs-typegoose';
 		AuthModule,
 		TopPageModule,
 		ProductModule,
-		ReviewModule
+		ReviewModule,
+		FilesModule,
+		SitemapModule,
+		TelegramModule
 	]
 })
 export class AppModule {}
