@@ -1,10 +1,13 @@
-version: "2.2"
-services: 
-  top.api: 
-    image: top-api:latest
-    container_name: top-api
+version: '3'
+services:
+  mongo:
+    image: mongo:4.4.4
+    container_name: mongo
     restart: always
-    ports: 
-      - 3000:3000
-    volumes: 
-      - ./.env/opt/app/.env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data-4.4:/data/db
